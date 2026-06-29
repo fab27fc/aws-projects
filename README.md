@@ -64,11 +64,107 @@ The customer wants to build a serverless web application that allows visitors to
 9. Amazon CloudWatch records logs and metrics.
 10. The business owner receives the email notification.
 
+User
+   │
+Route 53
+   │
+CloudFront
+   │
+S3
+   │
+API Gateway
+   │
+Lambda
+   ├──► DynamoDB
+   ├──► SES
+   └──► CloudWatch
+
 ---
 
 ## Deployment Steps
 
+# Deployment Guide
 
+## Phase 1 – Host the Static Website
+
+### Step 1
+Clone the website repository.
+
+### Step 2
+Create an Amazon S3 bucket.
+
+### Step 3
+Enable Static Website Hosting.
+
+### Step 4
+Configure the bucket policy.
+
+### Step 5
+Upload the website files.
+
+### Step 6
+Request an SSL certificate using AWS Certificate Manager.
+
+### Step 7
+Create the CloudFront distribution.
+
+### Step 8
+Configure Route 53.
+
+---
+
+## Phase 2 – Build the Contact Form Backend
+
+### Step 1
+Configure Amazon SES.
+
+### Step 2
+Create the IAM policy.
+
+### Step 3
+Create the IAM role.
+
+### Step 4
+Create the Lambda function.
+
+### Step 5
+Create the REST API.
+
+### Step 6
+Enable CORS.
+
+### Step 7
+Deploy the API.
+
+### Step 8
+Update the website.
+
+### Step 9
+Test the application.
+
+---
+
+## Phase 3 – Store Contact Data
+
+### Step 1
+Create the DynamoDB table.
+
+### Step 2
+Update the Lambda IAM permissions.
+
+### Step 3
+Update the Lambda function to store data in DynamoDB.
+
+### Step 4
+Deploy the changes.
+
+### Step 5
+Verify the records in DynamoDB.
+
+### Step 6
+Test the complete workflow.
+
+---
 
 
 
